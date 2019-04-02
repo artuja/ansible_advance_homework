@@ -2,9 +2,22 @@
 
 # tasks file for osp.servers
 - name: Create new server instances and attaches them a network and passes metadata to the instance
+  os_server:
+    cloud: ospcloud
+    state: present
+    name: "{{ name }}"
+    image: "{{ image }}"
+    key_name: "{{ key_name }}"
+    flavor: "{{ flavor }}"
+    security_groups: "{{ security_groups }}"
+    meta: "group={{ group }},deployment_name={{ deployment_name }}"
+  loop: os_server
 
+#- name: Add floating IP to Servers
+#  os_floating_ip:
+#    cloud: ospcloud
+#    state: present
+#    reuse: yes
+    
 
-- name: Add floating IP to Servers
-   
-
-- name: Wait for server to be available
+#- name: Wait for server to be available
