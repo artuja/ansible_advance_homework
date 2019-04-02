@@ -11,7 +11,7 @@
     flavor: "{{ item.flavor }}"
     security_groups: "{{ item.security_groups }}"
 #    meta: "group={{ group }},deployment_name={{ deployment_name }}"
-  loop: os_server
+  loop: osp_servers
 
 #- name: Add floating IP to Servers
 #  os_floating_ip:
