@@ -10,6 +10,8 @@
     key_name: "{{ item.key_name }}"
     flavor: "{{ item.flavor }}"
     security_groups: "{{ item.security_group }}"
+    nics:
+      - net-name: int_network
 #    meta: "group={{ group }},deployment_name={{ deployment_name }}"
   loop: "{{ osp_servers }}"
 
