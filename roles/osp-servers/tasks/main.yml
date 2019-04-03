@@ -4,7 +4,7 @@
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
     cloud: ospcloud
-    state: absent
+    state: present
     name: "{{ item.name }}"
     image: "{{ item.image }}"
     key_name: "{{ item.key_name }}"
@@ -12,6 +12,7 @@
     security_groups: "{{ item.security_group }}"
     nics:
       - net-name: int_network
+      - net-name: ext_network
 #    meta: "group={{ group }},deployment_name={{ deployment_name }}"
   loop: "{{ osp_servers }}"
 
