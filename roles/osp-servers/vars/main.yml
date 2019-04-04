@@ -10,7 +10,8 @@ osp_servers:
     security_group: frontend
     network: int_network
     meta:
-      - { group: frontends, deployment_name: QA}
+      - group: frontends 
+      - deployment_name: QA
 #  - type:  app1
   - name: app1
     state: present
@@ -20,7 +21,8 @@ osp_servers:
     security_group: apps
     network: int_network
     meta:
-      - { group: apps, deployment_name: QA}
+      - group: apps 
+      - deployment_name: QA
 #  - type:   app2
   - name: app2
     state: present
@@ -30,7 +32,8 @@ osp_servers:
     security_group: apps
     network: int_network
     meta:
-      - { group: apps, deployment_name: QA}
+      - group: apps 
+      - deployment_name: QA
 #  - type:   db
   - name: db
     state: present
@@ -40,4 +43,5 @@ osp_servers:
     security_group: db
     network: int_network
     meta:
-      - { group: appdbs, deployment_name: QA}
+      - group: appdbs 
+      - deployment_name: QA
