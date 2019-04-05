@@ -13,7 +13,7 @@
     nics:
       - net-name: int_network
       - net-name: ext_network
-#    meta: "group={{ item.meta.group }},deployment_name={{ item.meta.deployment_name }}"
+    meta: "group={{ item.meta_group }},deployment_name={{ item.meta_deployment_name }}"
   loop: "{{ osp_servers }}"
 
 #- name: Add floating IP to Servers
