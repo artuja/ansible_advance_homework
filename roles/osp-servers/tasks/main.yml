@@ -20,14 +20,15 @@
         cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
         {% endraw %}
   register: instanceip
-#  loop: "{{ osp_servers }}"
+  loop: "{{ osp_servers }}"
 
 - name: Add floating IP to "{{ item.name }}"
   os_floating_ip:
     cloud: ospcloud
     state: present
     reuse: yes
-    network: "{{ ext_network
+    server: "{{ item.name }}"
+    network: "{{ ext_network }}"
   register: instancefloatingip
   loop: "{{ osp_servers }}"
     
