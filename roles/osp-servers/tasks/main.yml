@@ -30,6 +30,7 @@
     server: "{{ item.name }}"
     network:  ext_network 
   register: instancefloatingip
+  debug: var=instancefloatingip.floating_ip.floating_ip_address
   loop: "{{ osp_servers }}"
    
 
