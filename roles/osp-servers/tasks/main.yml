@@ -14,6 +14,12 @@
       - net-name: int_network
       - net-name: ext_network
     meta: "group={{ item.meta_group }},deployment_name={{ item.meta_deployment_name }}"
+    userdata: |
+        {%- raw -%}#!/bin/bash
+        curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+        cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+        {% endraw %}
+  register: instanceip
   loop: "{{ osp_servers }}"
 
 #- name: Add floating IP to Servers
