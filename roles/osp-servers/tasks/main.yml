@@ -31,9 +31,9 @@
     network:  ext_network 
     wait: true
     timeout: 180
+  loop: "{{ osp_servers }}"
   register: instancefloatingip
   debug: var=instancefloatingip.floating_ip.floating_ip_address
-  loop: "{{ osp_servers }}"
    
 
 #- name: Wait for server to be available
