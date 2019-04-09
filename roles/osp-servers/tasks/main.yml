@@ -31,8 +31,8 @@
     network:  ext_network 
     wait: true
     timeout: 180
-    register: instancefloatingip
-    debug: var=instancefloatingip.floating_ip.floating_ip_address
+#    register: instancefloatingip
+#    debug: var=instancefloatingip.floating_ip.floating_ip_address
   loop: "{{ osp_servers }}"
    
 
