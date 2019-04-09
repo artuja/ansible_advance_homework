@@ -22,7 +22,7 @@
   register: instanceip
   loop: "{{ osp_servers }}"
 
-- name: Add floating IP to "{{ item.name }}"
+- name: Add floating IP to an instance
   os_floating_ip:
     cloud: ospcloud
     state: present
